@@ -1,0 +1,16 @@
+name: LLM Code Review (DSH)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: read
+
+jobs:
+  review:
+    uses: techlead-it/.github/.github/workflows/dsh-review.yml@0b9b6f20735d811fce9d6b0317ccdcd45f689943 # v7
+    with:
+      language: ja
